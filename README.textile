@@ -1,0 +1,3 @@
+h1. Notedown
+
+This is a notebook application which makes use of simple markup languages, such as "Textile":http://textile.sitemonks.com and "Markdown":http://daringfireball.net/projects/markdown/
