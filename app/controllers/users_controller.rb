@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :signed_in_user, only: [:index, :show, :edit, :update, :destroy]
+
 	def index
 	end
 
@@ -14,6 +16,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			flash[:success] = 'Account created! Welcome to Notedown'
+			sign_in @user
 			redirect_to @user
 		else
 			render 'new'

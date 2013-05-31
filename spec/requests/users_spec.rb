@@ -31,6 +31,10 @@ describe "Users" do
 			it "should redirect the user to their profile page" do
 				page.should have_content "Foo Bar"
 			end
+
+			it "should sign the user in" do
+				page.should have_content "Sign out"
+			end
 		end
 	end
 end

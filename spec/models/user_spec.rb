@@ -11,6 +11,7 @@ describe User do
 	it { should respond_to(:password_digest) }
 	it { should respond_to(:password) }
 	it { should respond_to(:password_confirmation) }
+	it { should respond_to(:remember_token) }
 
 	it { should be_valid }
 
@@ -34,6 +35,11 @@ describe User do
 
 	describe "with short password" do
 		before { @user.password = @user.password_confirmation = "short" }
+		it { should_not be_valid }
+	end
+
+	describe "with long user name" do
+		before { @user.name = "a" * 51 }
 		it { should_not be_valid }
 	end
 end
