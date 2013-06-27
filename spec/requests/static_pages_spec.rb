@@ -6,7 +6,7 @@ describe "Static Pages" do
 		before { visit "/" }
 
 		it "should have a login link" do
-			page.should have_link "Log in" 
+			page.should have_link "log in" 
 		end
 
 		it "should have a signup link" do
