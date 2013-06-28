@@ -1,7 +1,14 @@
-<h1>Notedown</h1>
-<p>
-	Notedown is a notebook application which allows you to take notes using a simple markup language and seeing the output as you type.
-</p>
+<div class="row">
+	<article class="hero-unit span6 offset2 text-center">
+		<h1>Notedown</h1>
+		<p class="lead">
+			Notedown is a notebook application which allows you to take notes using a simple markup language and seeing the output as you type.
+		</p>
+		<p>
+			<%= link_to 'Get started!', new_user_path, class: 'btn btn-large btn-primary' %>
+		</p>
+	</article>
+</div>
 <p>
 	Notedown makes it easy to manage your notes into notebooks and subjects. Using the Textile or Markdown language you can create rich and readable notes fast, using:
 </p>
@@ -16,3 +23,4 @@
 <p>
 	<%= link_to 'Sign up now', new_user_path %> or <%= link_to 'log in', new_session_path %> if you already have an account.
 </p>
+</article>

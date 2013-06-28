@@ -18,10 +18,12 @@ describe "Users" do
 
 		describe "creating a new user" do
 			before do
-				fill_in 'Name', with: 'Foo Bar'
-				fill_in 'Password', with: 'foobar'
-				fill_in 'Confirm Password', with: 'foobar'
-				click_button 'Create account'
+				within '#main-content' do
+					fill_in 'Name', with: 'Foo Bar'
+					fill_in 'Password', with: 'foobar'
+					fill_in 'Confirm Password', with: 'foobar'
+					click_button 'Create account'
+				end
 			end
 
 			it "should show a successful flash message" do
@@ -44,10 +46,11 @@ describe "Users" do
 		before do
 			@user = User.create name: 'Foo Bar', password: 'foobar', password_confirmation: 'foobar'
 			visit new_session_path
-			fill_in 'Name', with: @user.name
-			fill_in 'Password', with: @user.password
-			click_button 'Sign in'
-
+			within '#main-content' do
+				fill_in 'Name', with: @user.name
+				fill_in 'Password', with: @user.password
+				click_button 'Sign in'
+			end
 			visit edit_user_path(@user)
 		end
 
@@ -57,10 +60,12 @@ describe "Users" do
 
 		describe 'updating details' do
 			before do
-				fill_in 'Name', with: 'Lorem Ipsum'
-				fill_in 'Password', with: 'loremipsum'
-				fill_in 'Confirm Password', with: 'loremipsum'
-				click_button 'Save'
+				within '#main-content' do
+					fill_in 'Name', with: 'Lorem Ipsum'
+					fill_in 'Password', with: 'loremipsum'
+					fill_in 'Confirm Password', with: 'loremipsum'
+					click_button 'Save'
+				end
 			end
 
 			it { should have_selector '.alert-success' }
@@ -71,10 +76,12 @@ describe "Users" do
 		before do
 			@user = User.create name: 'Foo Bar', password: 'foobar', password_confirmation: 'foobar'
 			visit new_session_path
-			fill_in 'Name', with: @user.name
-			fill_in 'Password', with: @user.password
-			click_button 'Sign in'
-			visit edit_user_path(@user)
+			within '#main-content' do
+				fill_in 'Name', with: @user.name
+				fill_in 'Password', with: @user.password
+				click_button 'Sign in'
+				visit edit_user_path(@user)
+			end
 		end
 
 		it "should have a link to delete the user's account" do

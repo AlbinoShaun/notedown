@@ -16,9 +16,11 @@ describe "Sessions" do
 			describe "signing in" do
 				before do
 					visit new_session_path
-					fill_in 'Name', with: @user.name
-					fill_in 'Password', with: @user.password
-					click_button 'Sign in'
+					within '#main-content' do
+						fill_in 'Name', with: @user.name
+						fill_in 'Password', with: @user.password
+						click_button 'Sign in'
+					end
 				end
 
 				it { should have_content 'Sign out' }
@@ -30,9 +32,11 @@ describe "Sessions" do
 	describe "when signed in" do
 		before do
 			visit new_session_path
-			fill_in 'Name', with: @user.name
-			fill_in 'Password', with: @user.password
-			click_button 'Sign in'
+			within '#main-content' do
+				fill_in 'Name', with: @user.name
+				fill_in 'Password', with: @user.password
+				click_button 'Sign in'
+			end
 		end
 
 		describe "visiting own page" do

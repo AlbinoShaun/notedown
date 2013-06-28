@@ -1,0 +1,23 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+@mixin box_sizing {
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+#nav-signin-form {
+	margin: 1em;
+}
+
+.field_with_errors {
+	color: $errorText;
+	input {
+		background-color: $errorBackground;
+	}
+}
+
+#error_explanation {
+	color: $errorText;
+}

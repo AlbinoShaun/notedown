@@ -1,7 +1,12 @@
-<%= form_for :session, url: sessions_path do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-	<%= f.submit 'Sign in' %>
-<% end %>
+<div class="row">
+	<div class="span3 offset4">
+		<h1 class="text-center">Sign in</h1>
+		<%= form_for :session, url: sessions_path do |f| %>
+			<%= f.label :name %>
+			<%= f.text_field :name, class: 'input-block-level' %>
+			<%= f.label :password %>
+			<%= f.password_field :password, class: 'input-block-level' %>
+			<%= f.submit 'Sign in', class: 'btn btn-primary btn-block' %>
+		<% end %>
+	</div>
+</div>
