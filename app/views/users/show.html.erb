@@ -1,1 +1,4 @@
 <h1><%= @user.name %></h1>
+<div class="row">
+	<%= render 'shared/notebooks_sidebar' if current_user?(@user) %>
+</div>

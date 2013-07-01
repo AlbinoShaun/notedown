@@ -1,5 +1,12 @@
 Notedown::Application.routes.draw do
   resources :users
+
+  resources :notebooks do
+    resources :notes, only: [:new, :create]
+  end
+
+  resources :notes, except: [:new, :create]
+
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signin', to: 'sessions#new', via: 'get'

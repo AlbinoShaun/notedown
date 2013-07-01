@@ -1,0 +1,14 @@
+<aside class="span3">
+	<ul class="nav nav-list well well-small">
+		<li class="nav-header">Notebooks</li>
+		<% current_user.notebooks.each do |notebook| %>
+			<li><%= link_to notebook.title, notebook %></li>
+		<% end %>
+		<li class="divider"></li>
+		<li>
+			<%= form_for current_user.notebooks.build, class: 'navbar-search' do |f| %>
+				<%= f.text_field :title, class: 'search-query', placeholder: 'New Notebook' %>
+			<% end %>
+		</li>
+	</ul>
+</aside>
