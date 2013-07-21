@@ -3,6 +3,7 @@ class NotesController < ApplicationController
 	before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
 	def show
+		render 'edit'
 	end
 
 	def new
@@ -13,7 +14,7 @@ class NotesController < ApplicationController
 		@note = current_user.notebooks.find(params[:notebook_id]).notes.build(note_params)
 		if @note.save
 			flash[:success] = 'Note created.'
-			redirect_to edit_note_url(@note)
+			redirect_to edit_note_path(@note)
 		else
 			flash.now[:error] = "Note could not be saved."
 			render 'new'

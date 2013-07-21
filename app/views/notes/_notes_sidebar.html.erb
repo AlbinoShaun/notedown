@@ -1,0 +1,10 @@
+<aside class="span3">
+	<ul class="nav nav-list well well-small">
+		<li class="nav-header"><%= notebook.title %></li>
+		<% notebook.notes.each do |n| %>
+			<li><%= link_to n.title, n %></li>
+		<% end %>
+		<li class="divider"></li>
+		<li><%= link_to 'New Note', new_notebook_note_path(notebook) %></li>
+	</ul>
+</aside>

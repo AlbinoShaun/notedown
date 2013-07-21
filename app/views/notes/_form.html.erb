@@ -1,0 +1,15 @@
+<div class="row">
+	<%= render 'notes_sidebar', notebook: note.notebook %>
+	<article class="span4">
+		<%= form_for note, url: url do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<%= f.label :title %>
+			<%= f.text_field :title, class: 'input-block-level' %>
+			<%= f.label :content %>
+			<%= f.text_area :content, rows: '10', class: 'input-block-level' %>
+			<%= f.submit 'Save', class: 'btn btn-primary' %>
+		<% end %>
+	</article>
+	<article id="note_output" class="span5">
+	</article>
+</div>

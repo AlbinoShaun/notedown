@@ -11,6 +11,13 @@
 	margin: 1em;
 }
 
+#nav-new-notebook-form {
+	margin: 1em;
+	input {
+		margin: 0;
+	}
+}
+
 .field_with_errors {
 	color: $errorText;
 	input {
@@ -20,4 +27,12 @@
 
 #error_explanation {
 	color: $errorText;
+}
+
+// notetaking
+#note_output {
+	table tr td {
+		border: 1px solid black;
+		padding: 0 0.2em;
+	}
 }

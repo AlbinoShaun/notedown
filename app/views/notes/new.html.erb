@@ -1,7 +1,1 @@
-<%= form_for @note, url: notebook_notes_path(@note.notebook) do |f| %>
-	<%= f.label :title %>
-	<%= f.text_field :title %>
-	<%= f.label :content %>
-	<%= f.text_area :content %>
-	<%= f.submit %>
-<% end %>
+<%= render 'form', note: @note, url: notebook_notes_path(@note.notebook) %>

@@ -1,4 +1,4 @@
-<aside class="span3">
+<aside class="span2">
 	<ul class="nav nav-list well well-small">
 		<li class="nav-header">Notebooks</li>
 		<% current_user.notebooks.each do |notebook| %>
@@ -7,7 +7,7 @@
 		<li class="divider"></li>
 		<li>
 			<%= form_for current_user.notebooks.build, class: 'navbar-search' do |f| %>
-				<%= f.text_field :title, class: 'search-query', placeholder: 'New Notebook' %>
+				<%= f.text_field :title, class: 'search-query input-block-level', placeholder: 'New Notebook' %>
 			<% end %>
 		</li>
 	</ul>

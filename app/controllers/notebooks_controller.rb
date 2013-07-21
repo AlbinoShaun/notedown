@@ -9,7 +9,7 @@ class NotebooksController < ApplicationController
 		if @notebook.notes.any?
 			redirect_to newest_note_path(@notebook)
 		else
-			redirect_to notebooks_new_note_path(@notebook)
+			redirect_to new_notebook_note_path(@notebook)
 		end
 	end
 
