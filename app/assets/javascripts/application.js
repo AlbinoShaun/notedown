@@ -13,6 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-
 //= require bootstrap
+//= require_self
 //= require_tree .
+
+// debug
+
+// $(document).ready(function() {
+// 	alert('document is ready');
+// });
+// 
+// $(window).load(function() {
+// 	alert('window is loaded');
+// });
+// 
+// $(document).on('page:load', function() {
+// 	alert('turbolinks has loaded the document');
+// });      

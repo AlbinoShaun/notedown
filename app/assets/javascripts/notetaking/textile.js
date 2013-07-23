@@ -17,31 +17,36 @@
     function outputHtml($input, $output) {
     	var htmlOut = textile($input.val());
     	$output.html(htmlOut);
-    }
+	}
 
-	$(document).ready(function() {
+	function ready() {
 
 		var $input = $('#note_content');
 		var $output = $('#note_output');
+		
+		if ($input != null && $output != null) {
+			outputHtml($input, $output);
 
-		outputHtml($input, $output);
+			$input.bind('input propertychange', function() {
+				outputHtml($(this), $output);
+				$('.alert').alert('close');
+			});
 
-		$input.bind('input propertychange', function() {
-			outputHtml($(this), $output);
-			$('.alert').alert('close');
-		});
+			$input.keydown(function(e) {
+				if (e.keyCode === 9) { // tab key
+					pasteIntoInput(this, '\t');
+					return false;
+				}
+			});
 
-		$input.keydown(function(e) {
-			if (e.keyCode === 9) { // tab key
-				pasteIntoInput(this, '\t');
-				return false;
-			}
-		});
-
-		$input.keypress(function(e) {
-			if (e.keyCode === 9) {
-				return false;
-			}
-		});
-	});
+			$input.keypress(function(e) {
+				if (e.keyCode === 9) {
+					return false;
+				}
+			});
+		}
+	}
+	
+	$(document).ready(ready);
+	$(document).on('page:load', ready);
 })(jQuery);

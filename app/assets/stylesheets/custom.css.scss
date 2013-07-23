@@ -30,9 +30,15 @@
 }
 
 // notetaking
+#note_content {
+	resize: vertical;
+}
+
 #note_output {
-	table tr td {
-		border: 1px solid black;
-		padding: 0 0.2em;
+	table tr {
+		td, th {
+			border: 1px solid black;
+			padding: 0 0.2em;
+		}
 	}
 }
