@@ -1,5 +1,31 @@
 <div class="row">
-	<div class="span3 offset4">
+	<div class="span9">
+		<article>
+			<%= image_tag 'steve-note.jpg', alt: 'Using images', class: 'pull-left img-polaroid' %> 
+			<h1>Simple but Powerful</h1>
+			<p>
+				Easily write readable notes fast and include images, links and quotes to add richness, depth and clarity to your notes.
+			</p>
+			<div class="clearfix"></div>
+		</article>
+		<article>
+			<%= image_tag 'organizing-notes.jpg', alt: 'Organizing Notes', class: 'pull-right img-polaroid' %>
+			<h1>Stay Organized</h1>
+			<p>
+				Organize your notes into as many notebooks as you like. You can rename and rearrange your notebooks to suit your needs. 
+			</p>
+			<div class="clearfix"></div>
+		</article>
+		<article>
+			<%= image_tag 'notedown-dev.png', alt: 'Notedown Development', class: 'pull-left' %>
+			<h1>We're Always Developing</h1>
+			<p>
+				We use and love Notedown as much as our users. Like many great things Notedown was born out of necessity. So, we are committed to constantly improving our software and your experience.
+			</p>
+			<div class="clearfix"></div>
+		</article>
+	</div>
+	<div class="span3">
 		<h1 class="text-center">Sign Up!</h1>
 		<%= render 'form', user: @user, save_text: 'Create account' %>
 	</div>
