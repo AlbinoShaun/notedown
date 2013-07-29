@@ -1,11 +1,11 @@
 Notedown::Application.routes.draw do
   resources :users
 
-  resources :notebooks do
+  resources :notebooks, except: :edit do
     resources :notes, only: [:new, :create]
   end
 
-  resources :notes, except: [:new, :create]
+  resources :notes, except: [:new, :create, :edit]
 
   resources :sessions, only: [:new, :create, :destroy]
 

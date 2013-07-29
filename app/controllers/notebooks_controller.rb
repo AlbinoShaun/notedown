@@ -1,6 +1,6 @@
 class NotebooksController < ApplicationController
 	before_action :signed_in_user
-	before_action :correct_user, only: [:show, :edit, :update, :destroy]
+	before_action :correct_user, only: [:show, :update, :destroy]
 
 	def index
 	end
@@ -27,9 +27,9 @@ class NotebooksController < ApplicationController
 		end
 	end
 
-	def edit
-		redirect_to edit_note_path(@notebook.notes.order(:updated_at).last)
-	end
+  # def edit
+  #     redirect_to edit_note_path(@notebook.notes.order(:updated_at).last)
+  #   end
 
 	def update
 	end

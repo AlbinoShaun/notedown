@@ -1,9 +1,8 @@
 class NotesController < ApplicationController
 	before_action :signed_in_user
-	before_action :correct_user, only: [:show, :edit, :update, :destroy]
+	before_action :correct_user, only: [:show, :update, :destroy]
 
 	def show
-		render 'edit'
 	end
 
 	def new
@@ -21,8 +20,8 @@ class NotesController < ApplicationController
 		end
 	end
 
-	def edit
-	end
+  # def edit
+  # end
 
 	def update
 		if @note.update_attributes(note_params)
