@@ -13,7 +13,7 @@ class NotesController < ApplicationController
 		@note = current_user.notebooks.find(params[:notebook_id]).notes.build(note_params)
 		if @note.save
 			flash[:success] = 'Note created.'
-			redirect_to edit_note_path(@note)
+			redirect_to @note
 		else
 			flash.now[:error] = "Note could not be saved."
 			render 'new'
