@@ -55,4 +55,5 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
