@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130629073142) do
+ActiveRecord::Schema.define(version: 20130812113742) do
 
   create_table "notebooks", force: true do |t|
     t.string   "title"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20130629073142) do
 
   create_table "notes", force: true do |t|
     t.string   "title"
-    t.string   "content"
+    t.text     "content",     limit: 255
     t.string   "notebook_id"
     t.datetime "created_at"
     t.datetime "updated_at"
