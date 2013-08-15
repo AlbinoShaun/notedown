@@ -29,7 +29,7 @@ class NotesController < ApplicationController
 		else
 			flash.now[:error] = 'Note could not be saved.'
 		end
-		render 'edit'
+		render 'show'
 	end
 
 	def destroy
