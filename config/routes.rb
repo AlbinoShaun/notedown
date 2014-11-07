@@ -12,6 +12,13 @@ Notedown::Application.routes.draw do
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
+  # API
+  namespace :api do
+    namespace :v1 do
+      resources :notebooks, only: [:index, :show]
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
