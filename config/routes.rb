@@ -13,9 +13,10 @@ Notedown::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
   # API
-  namespace :api do
+  namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       resources :notebooks, only: [:index, :show]
+      resources :sessions, only: [:create]
     end
   end
 
