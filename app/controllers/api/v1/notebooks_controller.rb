@@ -1,11 +1,13 @@
 class Api::V1::NotebooksController < ApplicationController
 
 	def index
-		render json: { success: true, notebooks: current_user.notebooks }
+		@success = true
+		@notebooks = current_user.notebooks
 	end
 
 	def show
-		render json: current_user.notebooks.find(params[:id]).to_json(include: :notes)
+		@success = true
+		@notebook = current_user.notebooks.find(params[:id])
 	end
 
 	private
