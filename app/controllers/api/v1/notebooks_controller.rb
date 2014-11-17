@@ -8,6 +8,10 @@ class Api::V1::NotebooksController < ApplicationController
 	def show
 		@success = true
 		@notebook = current_user.notebooks.find(params[:id])
+		if @notebook.nil?
+			@success = false
+			@message = "Could not find that notebook."
+		end
 	end
 
 	private
