@@ -2,8 +2,9 @@ class Api::V1::NotesController < ApplicationController
 
 	def show
 		@success = true
-		@note = current_user.notes.find(params[:id])
-		if @note.nil?
+		begin
+			@note = current_user.notes.find(params[:id])
+		rescue Exception => e
 			@success = false
 			@message = "Could not find that note."
 		end
