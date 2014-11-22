@@ -1,6 +1,10 @@
 <div class="row">
 	<%= render 'notes_sidebar', notebook: note.notebook %>
 	<article class="span4">
+		<div class="btn-group" data-toggle="buttons-radio">
+			<button type="button" class="btn active" id="rendering_markdown">Markdown</button>
+			<button type="button" class="btn" id="rendering_textile">Textile</button>
+		</div>
 		<%= form_for note, url: url do |f| %>
 			<%= render 'shared/error_messages', object: f.object %>
 			<%= f.label :title %>

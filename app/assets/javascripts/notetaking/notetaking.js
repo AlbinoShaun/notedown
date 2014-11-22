@@ -1,4 +1,7 @@
 (function($) {
+
+	var markupLanguage = "markdown";
+
 	function pasteIntoInput(el, text) {
         el.focus();
         if (typeof el.selectionStart == "number") {
@@ -15,7 +18,17 @@
     }
 
     function outputHtml($input, $output) {
-    	var htmlOut = textile($input.val());
+    	var htmlOut = "";
+
+    	if (markupLanguage === "markdown")
+    		htmlOut = marked($input.val(), {
+    			highlight: function(code, lang) {
+    				return hljs.highlight(lang, code, true).value;
+    			}
+    		});
+    	else
+    		htmlOut = textile($input.val());
+
     	$output.html(htmlOut);
 	}
 
@@ -23,7 +36,19 @@
 
 		var $input = $('#note_content');
 		var $output = $('#note_output');
+		var $btnMarkdown = $('#rendering_markdown');
+		var $btnTextile = $('#rendering_textile');
 		
+		$btnMarkdown.click(function(e) {
+			markupLanguage = "markdown";
+			outputHtml($input, $output);
+		});
+
+		$btnTextile.click(function(e) {
+			markupLanguage = "textile";
+			outputHtml($input, $output);
+		});
+
 		if ($input != null && $output != null) {
 			outputHtml($input, $output);
 
