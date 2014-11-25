@@ -42,3 +42,27 @@
 		}
 	}
 }
+
+#notebook-nav {
+	.label.delete-button {
+		margin-right: 0;
+		padding: 2px 4px;
+		float: right;
+		display: none;
+		text-transform: none;
+		
+		&:hover {
+			background-color: $grayDark;
+		}
+	}
+
+	.note-item {
+		position: relative;
+
+		.label.delete-button {
+			position: absolute;
+			top: 3px;
+			right: 0;
+		}
+	}
+}
